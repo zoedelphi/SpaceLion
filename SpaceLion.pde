@@ -29,7 +29,7 @@ int selectedLevel = 1;
 
 // Initialisation of variables and building the levels.
 void setup() {
-  size(400,600,P2D);
+  size(400,600);
   frameRate(60);
   gameFont = createFont("data/5x5.ttf", 20);
   textFont(gameFont);

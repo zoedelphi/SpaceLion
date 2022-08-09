@@ -35,13 +35,12 @@ class AllProjectiles {
     projectiles.add(new Projectile(missile));
   }
   
-  // Checks collision - bullet has to be entirely within the target to hit
-  // This was probably a mistake.
+  // Checks collision
   public Projectile checkCollision(float x1, float y1, float x2, float y2, int layer) {
     for (Projectile shot : projectiles) {
       if ((shot.getLayer() == layer) && shot.checkIfCollidable()) {
-        if ((shot.getX()-(shot.getSpriteWidth()/2)>=x1) && (shot.getX()+(shot.getSpriteWidth()/2)<=x2) &&
-            (shot.getY()-(shot.getSpriteHeight()/2)>=y1) && (shot.getY()+(shot.getSpriteHeight()/2)<=y2)) {
+        if ((shot.getX()>=x1) && (shot.getX()<=x2) &&
+            (shot.getY()>=y1) && (shot.getY()<=y2)) {
               return shot;
           }
       }

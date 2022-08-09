@@ -76,9 +76,7 @@ class Missile {
   public boolean checkCollision() {
     PImage sprite = missileSprites.get(spriteState);
     
-    if (x + sprite.width < 0 || x > width) {
-      return true;
-    } else if (y + sprite.height < 0 || y > height) {
+    if (y + sprite.height < 0 || y > height) {
       return true;  
     }
     
@@ -101,7 +99,7 @@ class Missile {
     }
     if (explosionState <= 10) {
       PImage sprite = explosionSprites.get(explosionState);
-      image(sprite,x-(sprite.width/2),y-(sprite.width)/2);
+      image(sprite,x-(sprite.width/2),y-(sprite.height)/2);
     } else {
       isAlive = false;
     }
